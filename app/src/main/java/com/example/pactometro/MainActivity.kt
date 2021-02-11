@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import retrofit2.Call
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity() {
                     partidos_recycler?.apply {
                         setHasFixedSize(true)
                         layoutManager = LinearLayoutManager(this@MainActivity)
+                        layoutManager = GridLayoutManager(this@MainActivity,2)
                         adapter = PartidosAdapter(response.body()!!)
                     }
                 }else{
