@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.pactometro.ServiceBuilder.URL
 import com.squareup.picasso.Picasso
 
-class PartidosAdapter(private val countriesList: List<Partido>) :RecyclerView.Adapter<PartidosAdapter.ViewHolder>() {
+class PartidosAdapter(private val partyList: List<Partido>) :RecyclerView.Adapter<PartidosAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
@@ -21,15 +21,15 @@ class PartidosAdapter(private val countriesList: List<Partido>) :RecyclerView.Ad
 
     override fun getItemCount(): Int {
 
-        return countriesList.size
+        return partyList.size
     }
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        Log.d("Response", "List Count :${countriesList.size} ")
+        Log.d("Response", "List Count :${partyList.size} ")
 
 
-        return holder.bind(countriesList[position])
+        return holder.bind(partyList[position])
 
     }
     class ViewHolder(itemView : View) :RecyclerView.ViewHolder(itemView) {

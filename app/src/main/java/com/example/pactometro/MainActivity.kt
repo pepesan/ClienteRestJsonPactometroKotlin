@@ -34,9 +34,9 @@ class MainActivity : AppCompatActivity() {
                     Log.d("Response", "partidos list size : ${countryList.size}")
                     partidos_recycler?.apply {
                         setHasFixedSize(true)
-                        layoutManager = LinearLayoutManager(this@MainActivity)
+                        // layoutManager = LinearLayoutManager(this@MainActivity)
                         layoutManager = GridLayoutManager(this@MainActivity,2)
-                        adapter = PartidosAdapter(response.body()!!)
+                        adapter = PartidosAdapter(countryList)
                     }
                 }else{
                     Toast.makeText(this@MainActivity, "Something went wrong ${response.message()}", Toast.LENGTH_SHORT).show()
